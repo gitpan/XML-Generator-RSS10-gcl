@@ -47,6 +47,7 @@ sub _camelcase {
 
    my ($self,$cat) = @_;
    $cat =~ s/\s*(\w+)\s*/\u\L$1/g;
+   $cat =~ s/[^A-Za-z]//g;
    return $cat;
 
 }
@@ -104,17 +105,15 @@ XML::Generator::RSS10::gcl - Support for the UK Government Category List (gcl) s
 
 =head1 DESCRIPTION
 
-This module extends Dave Rolsky's L<XML::Generator::RSS10> to support categories taken from the UK Government Category List (gcl), a controlled vocabulary for use in the UK e-Government Metadata Standard (egms).
+This module extends Dave Rolsky's L<XML::Generator::RSS10> to provide support categories taken from the UK Government Category List (gcl), a controlled vocabulary for use in the UK e-Government Metadata Standard (egms).
 
 The module is intended for use only with L<XML::Generator::RSS10::egms>.  Please see the documentation accompanying that module for further information.
 
-=head1 CAVEAT
+=head1 CHANGES
 
-This module has no awareness of what categories are actually in the GCL.  Moreover, it calculates the appropriate reference to the GCL RDF schema by taking the category you supply and putting it in CamelCase.  I'm not aware of any categories for which this would result in an incorrect reference, but exceptions would constitute a bug.
+B<Version 0.02>: Minor change to the way the XML local-name is created for tags in the GCL namespace, to account for category names with punctuation marks.
 
-=head1 BUGS
-
-Please let me know of any you find.  You can use the CPAN bug tracker for this by emailing L<bug-XML-Generator-RSS10-gcl@rt.cpan.org>.
+B<Version 0.01>: Initial release.
 
 =head1 SEE ALSO
 
