@@ -1,0 +1,6 @@
+Revision history for Perl extension XML::Generator::RSS10::gcl.
+
+0.01  Wed Sep  8 12:02:06 2004
+	- original version; created by h2xs 1.22 with options
+		-X -n XML::Generator::RSS10::gcl
+
